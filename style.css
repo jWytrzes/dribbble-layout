@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&subset=latin-ext');
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('assets/BebasNeue-Regular.otf'),
+         url('assets/BebasNeue-Regular.ttf') format('truetype');
+}
+
+/*global*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Lato, sans-serif;
+}
+
+h1 {
+    font-size: 68px;
+    font-family: BebasNeue;
+    font-weight: normal;
+}
+
+h2{
+    font-size: 58px;
+    font-family: BebasNeue;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 48px;
+    font-family: BebasNeue;
+    font-weight: normal;
+}
+
+/*right column*/
+aside.right-col {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 11%;
+    height: 100vh;
+    text-align: center;
+}
+
+.logo {
+    background: #272125;
+    padding-top: 20px;
+}
+
+.logo img {
+    display: block;
+    max-width: 100%;
+}
+
+/*menu */
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: block;
+    padding: 20px 10px;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    font-size: 14px;
+    color: #272125;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 17px;
+}
+
+nav ul li.active a {
+    color: #EC2D6D;
+}
+
+nav ul li::before {
+    width: 60px;
+    height: 60px;
+    border-radius: 45px;
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    display: none;
+    padding: 13px;
+    box-sizing: border-box;
+}
+
+nav ul li:nth-child(1)::before {
+    content: url(assets/screen1/basketicon.svg);
+    background: #1B509F;
+}
+
+nav ul li.active::before {
+    display: block;
+}
+
+
+/**/
+
+.counter {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #272125;
+    text-transform: uppercase;
+}
+
+.counter .number {
+    font-family: BebasNeue;
+    font-size: 100px;
+    font-weight: normal;
+    line-height: 90px;
+}
+
+.social-media {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: Calc(100% - 40px);
+    position: relative;
+    left: 20px;
+    border-top: 3px solid rgba(39, 33, 37, 0.5);
+    border-bottom: 3px solid rgba(39, 33, 37, 0.5);
+    padding: 10px 0;
+}
+
+.social-media li {
+    display: inline-block;
+    width: 21%;
+}
+
+.social-media a {
+    display: block;
+}
+
+.social-media img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.pgs {
+    font-size: 12px;
+    color: #272125;
+    font-weight: 700;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.pgs a {
+    color: #EC2D6D;
+    text-decoration: none;
+}
+
+/*1st screen - home*/
+.screen {
+    width: Calc(100% - 11%);
+    height: 100vh;
+}
+
+.screen.s1 {
+    background-image: url(assets/screen1/Bitmap.png);
+    background-size: cover;
+}
+
+.message {
+     text-transform: uppercase;
+     position: absolute;
+     top: 5.26%;
+     left: 12.77%;
+     text-align: center;
+     line-height: 1;
+}
+
+.message .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;;
+}
+
+.message h2 {
+    color: #EC2D6D;
+    margin:0 0 20px 0;
+    position: relative;
+    padding: 0;
+    z-index: 99;
+    left: -20px;
+}
+
+.message h2::after {
+    position: absolute;
+    content: "";
+    background: #272125;
+    width: 75%;
+    z-index: -1;
+    height: 87%;
+    right: 17%;
+    top: 10px;
+}
+
+.message .grey {
+    color: #E3DAD3;
+}
+
+.message h1, .message h3 {
+    margin: 0;
+    padding: 0;
+    color: #272125;
+}
+
+/* screen 2 */
+.screen.s2 {
+    background-color: #E3DAD3;
+}
