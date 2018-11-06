@@ -76,6 +76,7 @@ nav ul li {
     display: block;
     padding: 20px 10px;
     position: relative;
+    transition: all .3s;
 }
 
 nav ul li a {
@@ -86,10 +87,14 @@ nav ul li a {
     text-decoration: none;
     font-weight: 700;
     line-height: 17px;
+    transition: all .3s;
+
 }
 
 nav ul li.active a {
     color: #EC2D6D;
+    transition: all .3s;
+
 }
 
 nav ul li::before {
@@ -123,6 +128,11 @@ nav ul li:nth-child(3)::before {
 
 nav ul li.active::before {
     display: block;
+}
+
+.unactive {
+    opacity: 0.2;
+    cursor: auto;
 }
 
 
@@ -206,6 +216,11 @@ nav ul li.active::before {
      left: 12.77%;
      text-align: center;
      line-height: 1;
+}
+
+.message img {
+    width: 479px;
+    height: 294px;
 }
 
 .message .content {
@@ -485,12 +500,63 @@ nav ul li.active::before {
 }
 
 @media(min-width: 1920px) {
+    /* right col*/
+    nav ul {
+        padding: 80px 0;
+    }
+
+    nav ul li {
+        padding: 30px 10px;
+    }
+
+    .counter {
+        margin-bottom: 30px;
+    }
+
+    .pgs {
+        bottom: 30px;
+    }
+
+    /* screen1 */
+    .message {
+        top: 100px;
+        left: 322px;
+    }
+
+    .message .content {
+        transform: translate(-50%, -55%);
+    }
+
+    .message img {
+        width: 657px;
+        height: auto;
+    }
+
+    .message h1 {
+        font-size: 100px;
+    }
+
+    .message h2 {
+        font-size: 90px;
+    }
+
+    .message h2::after {
+        top: 18px;
+    }
+
+    .message h3 {
+        font-size: 68px;
+    }
+
+    /*screen 2*/
     .centered-rect {
-        width: 44%;
+        width: 52%;
+        padding: 4%;
     }
 
     .centered-rect ul li {
         font-size: 26px;
+        margin: 20px 0;
     }
 
     .centered-rect .time {
@@ -499,5 +565,70 @@ nav ul li.active::before {
 
     .centered-rect .bigger {
         font-size: 90px;
+        transform: translateY(-50%) translateX(57%);
+    }
+
+    .player {
+        width: 146px;
+        height: 150px;
+        top: 33%;
+        left: 17%;
+    }
+
+    .pink-shape {
+        top: 37.5%;
+        width: 171px;
+        height: auto;
+        left: 17.75%;
+    }
+
+    .blue-shape {
+        width: 126px;
+        height: auto;
+    }
+
+    .pizza {
+        width: 134px;
+        height: 134px;
+        top: 78%;
+        left: 39%;
+    }
+
+    .line {
+        width: 2px;
+    }
+
+    .line.l1 {
+        left: 12%;
+        height: 246px;
+    }
+
+    .line.l2 {
+        right: 12%;
+        height: 622px;
+    }
+    
+    /* screen3 */
+    .screen.s3 .column .description h2 {
+        font-size: 80px;
+    }
+
+    .screen.s3 .column .description h1 {
+        font-size: 200px;
+    }
+
+    .screen.s3 .column .description p {
+        font-size: 30px;
+    }
+
+    .screen.s3 .column {
+        width: 43%;
+        margin: 15vh 3.5%;
+    }
+
+    .line.l3 {
+        width: 2px;
+        height: 214px;
+        left: 12%;
     }
 }

@@ -15,10 +15,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li class="active"><a href="#schedule">Schedule</a></li>
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#speakers">Speakers</a></li>
-                <li><a href="#location">Location</a></li>
+                <li><a class='unactive' href="#location">Location</a></li>
             </ul>
         </nav>
         <div class="counter">
@@ -35,7 +35,7 @@
     </aside>
     <section class="screen s1" id="home">
         <div class="message">
-            <img src="assets/screen1/bubble-small.png" alt="bubble">
+            <img src="assets/screen1/bubble.png" alt="bubble">
             <div class="content">
                 <h1>Hi, Dribbblers!</h1>
                 <h2> 13 Dec <span class='grey'> 2018 </span></h2>
@@ -108,5 +108,49 @@
         </div>
     </section>
     -->
+
+    <script>   
+        //smooth scroll
+        function scrollTo(element) {
+            window.scroll({
+                behavior: 'smooth',
+                left: 0,
+                top: element.getBoundingClientRect().top + window.scrollY
+            });
+        }
+
+        let links = document.querySelectorAll("nav a");
+        for(let i=0; i < links.length; i++) {
+            links[i].addEventListener('click', () => {
+                scrollTo(links[i].getAttribute('href'));
+                console.log(links[i].getAttribute('href'));
+            });
+        }
+
+        //before 
+        function changeActiveLink() {
+            let scrollTop = document.documentElement.scrollTop;
+            let height = window.innerHeight;
+            let links = document.querySelectorAll("nav li");
+            let el = 0;
+            let point = 0.62143
+
+            if(scrollTop > height * point) el = 1;
+            if(scrollTop > height * point + height) el = 2;
+            if(scrollTop > height * point + height * 2) el = 3;
+            
+            for(let i=0; i < links.length; i++) {
+                links[i].classList.remove('active');
+            };
+            
+            links[el].classList.add('active');
+
+            console.log(scrollTop);
+            console.log(height * 0.63878);
+            console.log(el);
+        }
+        window.addEventListener('scroll', changeActiveLink);
+        
+    </script>
 </body>
 </html>
